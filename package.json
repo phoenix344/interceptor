@@ -1,5 +1,5 @@
 {
-  "name": "@outtacontrol/socks-registry",
+  "name": "@outtacontrol/socks-domain-registry",
   "version": "1.0.0",
   "description": "a route for the dat network",
   "main": "./lib/index.js",

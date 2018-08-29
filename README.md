@@ -1,4 +1,4 @@
-# socks-registry
+# socks-domain-registry
 Reads a hyperdrive feed with domain information and verifies the validity of the domain by it's creation date and the
 predefined expire date of the last update.
 
