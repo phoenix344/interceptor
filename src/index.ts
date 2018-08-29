@@ -3,25 +3,36 @@ import { Url } from 'url';
 import { verify } from 'sodium-signatures';
 import { RegistryEntry } from './RegistryEntry';
 import { RegistrySettings } from './RegistrySettings';
+import { RegistryOptions } from './RegistryOptions';
 
-export { RegistryEntry, RegistrySettings }
+export { RegistryEntry, RegistrySettings, RegistryOptions }
 
 export class RegistryInterceptor implements SocksRoute {
     public uri!: Url;
     private expireTime!: number;
 
-    constructor(public archive: any, public intercept?: SocksRouteInterceptor) { }
+    constructor(public archive: any, public intercept?: SocksRouteInterceptor, public options: RegistryOptions = {}) {
+        options.timeout = options.timeout || 10000;
+    }
 
     public initialize(): Promise<void> {
         return new Promise((resolve, reject) => {
+            let noTimeout = true;
+            const timeout = setTimeout(() => {
+                noTimeout = false;
+                reject(new Error("loading archive ran into a timeout!"));
+            }, this.options.timeout);
             this.archive.on('ready', () => {
-                this.archive.readFile('tld.json', (err: Error, data: Buffer) => {
-                    if (err) return reject(err);
-                    const tld: RegistrySettings = JSON.parse(data.toString('utf8'));
-                    this.expireTime = tld['domain-expire-time'];
-                    this.uri = { hostname: tld.name };
-                    resolve();
-                });
+                if (noTimeout) {
+                    clearTimeout(timeout);
+                    this.archive.readFile('tld.json', (err: Error, data: Buffer) => {
+                        if (err) return reject(err);
+                        const tld: RegistrySettings = JSON.parse(data.toString('utf8'));
+                        this.expireTime = tld['domain-expire-time'];
+                        this.uri = { hostname: tld.name };
+                        resolve();
+                    });
+                }
             });
         });
     }
