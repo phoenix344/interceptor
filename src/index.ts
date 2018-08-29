@@ -1,17 +1,15 @@
-import { Route } from '@outtacontrol/socks-router/lib/interfaces/Route';
-import { SocksProxyInfo } from '@outtacontrol/socks-router/lib/interfaces/SocksProxyInfo';
-import { Execute } from '@outtacontrol/socks-router/lib/interfaces/Execute';
+import { SocksProxyInfo, SocksRoute, SocksRouteInterceptor } from '@outtacontrol/socks-router/lib/';
 import { Url } from 'url';
 import { verify } from 'sodium-signatures';
 import { RegistryEntry } from './RegistryEntry';
 
 export { RegistryEntry }
 
-export class RegistryInterceptor implements Route {
+export class RegistryInterceptor implements SocksRoute {
     public uri!: Url;
     private expireTime!: number;
 
-    constructor(public archive: any, public execute?: Execute) { }
+    constructor(public archive: any, public intercept?: SocksRouteInterceptor) { }
 
     public initialize(): Promise<void> {
         return new Promise((resolve, reject) => {
@@ -52,6 +50,6 @@ export class RegistryInterceptor implements Route {
 
 }
 
-export function createRegistryInterceptor(archive: any, execute?: Execute): RegistryInterceptor {
-    return new RegistryInterceptor(archive, execute);
+export function createRegistryInterceptor(archive: any, intercept?: SocksRouteInterceptor): RegistryInterceptor {
+    return new RegistryInterceptor(archive, intercept);
 }

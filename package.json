@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/phoenix344/interceptor#readme",
   "dependencies": {
-    "@outtacontrol/socks-router": "^1.0.2",
+    "@outtacontrol/socks-router": "^1.0.6",
     "sodium-signatures": "^2.1.1"
   },
   "devDependencies": {
