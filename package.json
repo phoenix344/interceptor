@@ -1,5 +1,5 @@
 {
-  "name": "@outtacontrol/interceptor",
+  "name": "@outtacontrol/socks-registry",
   "version": "1.0.0",
   "description": "a route for the dat network",
   "main": "./lib/index.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phoenix344/dat-route.git"
+    "url": "git+https://github.com/phoenix344/interceptor.git"
   },
   "keywords": [],
   "author": "phoenix344",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phoenix344/dat-route/issues"
+    "url": "https://github.com/phoenix344/interceptor/issues"
   },
-  "homepage": "https://github.com/phoenix344/dat-route#readme",
+  "homepage": "https://github.com/phoenix344/interceptor#readme",
   "dependencies": {
     "@outtacontrol/socks-router": "^1.0.2",
     "sodium-signatures": "^2.1.1"

@@ -3,6 +3,9 @@ import { SocksProxyInfo } from '@outtacontrol/socks-router/lib/interfaces/SocksP
 import { Execute } from '@outtacontrol/socks-router/lib/interfaces/Execute';
 import { Url } from 'url';
 import { verify } from 'sodium-signatures';
+import { RegistryEntry } from './RegistryEntry';
+
+export { RegistryEntry }
 
 export class RegistryInterceptor implements Route {
     public uri!: Url;
