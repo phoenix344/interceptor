@@ -1,0 +1,33 @@
+{
+  "name": "@outtacontrol/interceptor",
+  "version": "1.0.0",
+  "description": "a route for the dat network",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "build": "tsc",
+    "start": "tsc -w",
+    "test": "node test/test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phoenix344/dat-route.git"
+  },
+  "keywords": [],
+  "author": "phoenix344",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/phoenix344/dat-route/issues"
+  },
+  "homepage": "https://github.com/phoenix344/dat-route#readme",
+  "dependencies": {
+    "@outtacontrol/socks-router": "^1.0.2",
+    "sodium-signatures": "^2.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^10.9.3"
+  }
+}
