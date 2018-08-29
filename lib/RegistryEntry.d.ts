@@ -1,4 +1,4 @@
-declare interface RegistryEntry {
+export interface RegistryEntry {
     sig: string;
     owner: string;
     created: number;

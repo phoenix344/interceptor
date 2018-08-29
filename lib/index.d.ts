@@ -1,17 +1,17 @@
 /// <reference types="node" />
-import { Route } from '@outtacontrol/socks-router/lib/interfaces/Route';
-import { SocksProxyInfo } from '@outtacontrol/socks-router/lib/interfaces/SocksProxyInfo';
-import { Execute } from '@outtacontrol/socks-router/lib/interfaces/Execute';
+import { SocksProxyInfo, SocksRoute, SocksRouteInterceptor } from '@outtacontrol/socks-router/lib/';
 import { Url } from 'url';
-export declare class RegistryInterceptor implements Route {
+import { RegistryEntry } from './RegistryEntry';
+export { RegistryEntry };
+export declare class RegistryInterceptor implements SocksRoute {
     archive: any;
-    execute?: Execute | undefined;
+    intercept?: SocksRouteInterceptor | undefined;
     uri: Url;
     private expireTime;
-    constructor(archive: any, execute?: Execute | undefined);
+    constructor(archive: any, intercept?: SocksRouteInterceptor | undefined);
     initialize(): Promise<void>;
     validate(info: SocksProxyInfo): Promise<boolean>;
     private findUrl;
 }
-export declare function createRegistryInterceptor(archive: any, execute?: Execute): RegistryInterceptor;
+export declare function createRegistryInterceptor(archive: any, intercept?: SocksRouteInterceptor): RegistryInterceptor;
 //# sourceMappingURL=index.d.ts.map
