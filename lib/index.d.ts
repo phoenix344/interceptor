@@ -2,7 +2,8 @@
 import { SocksProxyInfo, SocksRoute, SocksRouteInterceptor } from '@outtacontrol/socks-router/lib/';
 import { Url } from 'url';
 import { RegistryEntry } from './RegistryEntry';
-export { RegistryEntry };
+import { RegistrySettings } from './RegistrySettings';
+export { RegistryEntry, RegistrySettings };
 export declare class RegistryInterceptor implements SocksRoute {
     archive: any;
     intercept?: SocksRouteInterceptor | undefined;

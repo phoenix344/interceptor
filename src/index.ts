@@ -2,8 +2,9 @@ import { SocksProxyInfo, SocksRoute, SocksRouteInterceptor } from '@outtacontrol
 import { Url } from 'url';
 import { verify } from 'sodium-signatures';
 import { RegistryEntry } from './RegistryEntry';
+import { RegistrySettings } from './RegistrySettings';
 
-export { RegistryEntry }
+export { RegistryEntry, RegistrySettings }
 
 export class RegistryInterceptor implements SocksRoute {
     public uri!: Url;
@@ -16,7 +17,7 @@ export class RegistryInterceptor implements SocksRoute {
             this.archive.on('ready', () => {
                 this.archive.readFile('tld.json', (err: Error, data: Buffer) => {
                     if (err) return reject(err);
-                    const tld = JSON.parse(data.toString('utf8'));
+                    const tld: RegistrySettings = JSON.parse(data.toString('utf8'));
                     this.expireTime = tld['domain-expire-time'];
                     this.uri = { hostname: tld.name };
                     resolve();
