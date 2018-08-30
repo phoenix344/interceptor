@@ -1,7 +1,7 @@
 {
   "name": "@outtacontrol/socks-domain-registry",
   "version": "1.0.0",
-  "description": "a route for the dat network",
+  "description": "A route to delegate and intercept socks5 requests from socks-router with a DAT registry archive.",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "engines": {
