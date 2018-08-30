@@ -4,8 +4,8 @@
   "description": "a route for the dat network",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
-  "directories": {
-    "lib": "lib"
+  "engines": {
+    "node": ">=10"
   },
   "scripts": {
     "build": "tsc",
