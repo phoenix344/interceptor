@@ -1,5 +1,5 @@
-const { createArchive, createFakeServer } = require('./intercept.mock');
-const { createInterceptor } = require('../lib/index');
+const { createArchive, createFakeServer } = require('./mock');
+const { createInterceptor } = require('../lib');
 const { createRouter } = require('@outtacontrol/socks-router');
 const assert = require("assert");
 
