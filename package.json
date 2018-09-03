@@ -1,5 +1,5 @@
 {
-  "name": "@outtacontrol/socks-domain-registry",
+  "name": "@outtacontrol/socks-domain-interceptor",
   "version": "1.0.0",
   "description": "A route to delegate and intercept socks5 requests from socks-router with a DAT registry archive.",
   "main": "./lib/index.js",
@@ -14,15 +14,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/phoenix344/socks-domain-registry.git"
+    "url": "git+https://github.com/phoenix344/socks-domain-interceptor.git"
   },
   "keywords": [],
   "author": "phoenix344",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/phoenix344/socks-domain-registry/issues"
+    "url": "https://github.com/phoenix344/socks-domain-interceptor/issues"
   },
-  "homepage": "https://github.com/phoenix344/socks-domain-registry#readme",
+  "homepage": "https://github.com/phoenix344/socks-domain-interceptor#readme",
   "dependencies": {
     "sodium-signatures": "^2.1.1"
   },
