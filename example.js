@@ -10,8 +10,13 @@ const feed = hyperdrive(filename => ram(filename));
 
 feed.ready(() => {
     const keys = keyPair();
+
+    const created = Date.now() - Math.round(Math.random() * 3888000000);
+    const updated = created;
+
     const domainMetadata = {
-        created: Date.now() - Math.round(Math.random() * 3888000000),
+        created,
+        updated,
         title: "My Test Website",
         description: "Some description text for my test website",
         uri: "https://example.com"
@@ -54,5 +59,3 @@ feed.ready(() => {
 
     });
 });
-
-// createRegistryInterceptor()

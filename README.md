@@ -1,6 +1,6 @@
 # socks-domain-registry
-Reads a hyperdrive feed with domain information and verifies the validity of the domain by it's creation date and the
-predefined expire date of the last update.
+Reads a hyperdrive archive by the given domain name. The saved domain must contain a signature and a public key for the verification.
+
 
 A toplevel domain (tld) contains a configuration file called <code>tld.json</code>.
 

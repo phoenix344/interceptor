@@ -39,10 +39,10 @@ export class RegistryInterceptor implements SocksRoute {
 
     public async validate(info: SocksProxyInfo): Promise<boolean> {
         try {
-            const { created, title, description, uri, sig, owner } = await this.findUrl(info.dstAddr);
-            const signedData = JSON.stringify({ created, title, description, uri });
+            const { created, updated, title, description, uri, sig, owner } = await this.findUrl(info.dstAddr);
+            const signedData = JSON.stringify({ created, updated, title, description, uri });
             const now = Date.now();
-            const alive = now - created < this.expireTime;
+            const alive = undefined === this.expireTime || now - updated < this.expireTime;
             const verified = verify(Buffer.from(signedData, "utf8"), Buffer.from(sig, 'hex'), Buffer.from(owner, 'hex'));
             return alive && verified;
         } catch (err) {
